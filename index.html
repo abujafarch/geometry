@@ -15,11 +15,11 @@
     </header>
     <main class="m-5">
         <!-- main content container  -->
-        <div class="flex justify-evenly">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-evenly gap-5">
             <!-- shape card container -->
-            <div class="grid grid-cols-3 gap-8"> 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> 
                 <!-- triangle card -->
-                <div class="card w-96 bg-base-100 border-[1px]">
+                <div class="card max-w-96 bg-base-100 border-[1px]">
                     <figure class="px-12 pt-8 w-full"><img src="images/triangle.png"/></figure>
                     <div class="card-body">
                       <h2 class="card-title text-center inline font-bold text-3xl">Triangle</h2>
@@ -37,24 +37,25 @@
                     </div>
                 </div>
                 <!-- rectangle card -->
-                <div class="card w-96 bg-base-100 border-[1px]">
+                <div class="card max-w-96 bg-base-100 border-[1px]">
                   <figure class="px-12 pt-8 w-full"><img class="w-full" src="images/rectangle.png"/></figure>
                     <div class="card-body">
                       <h2 class="card-title text-center inline font-bold text-3xl">Rectangle</h2>
                       <p class="text-center">Area (A) = w × l</p>
+                      <p class="text-center">Area : <span id="rect-area-value">0</span> <span>cm<sup>2</sup></span></p>
                       <div class="flex gap-2 w-[80%] mx-auto my-4">
-                        <input type="text" placeholder="w" class="w-1/2 outline-none bg-[#f0f0f0c2] rounded-[3px] px-2 py-1 font-semibold text-[#6e6e6e]">
+                        <input type="text" placeholder="w" id="width-value" class="w-1/2 outline-none bg-[#f0f0f0c2] rounded-[3px] px-2 py-1 font-semibold text-[#6e6e6e]">
                         <p>cm</p>
-                        <input type="text" placeholder="l" class="w-1/2 outline-none bg-[#f0f0f0c2] rounded-[3px] px-2 py-1 font-semibold text-[#6e6e6e]">
+                        <input type="text" placeholder="l" id="length-value" class="w-1/2 outline-none bg-[#f0f0f0c2] rounded-[3px] px-2 py-1 font-semibold text-[#6e6e6e]">
                         <p>cm</p>
                       </div>
                       <div class="card-actions justify-center">
-                        <button class="btn w-[100%] bg-[#1090D8] rounded-[8px] text-[white] font-semibold text-xl hover:bg-[#106dd8]">Calculate</button>
+                        <button onclick="calculateRectangle()" class="btn w-[100%] bg-[#1090D8] rounded-[8px] text-[white] font-semibold text-xl hover:bg-[#106dd8]">Calculate</button>
                       </div>
                     </div>
                 </div>
                 <!-- parallelogram card -->
-                <div class="card w-96 bg-base-100 border-[1px]">
+                <div class="card max-w-96 bg-base-100 border-[1px]">
                   <figure class="px-12 pt-8 w-full"><img class="w-full" src="images/parallelogram.png"/></figure>
                     <div class="card-body">
                       <h2 class="card-title text-center inline font-bold text-3xl">Parallelogram</h2>
@@ -71,7 +72,7 @@
                     </div>
                 </div>
                 <!-- rhombus card -->
-                <div class="card w-96 bg-base-100 border-[1px]">
+                <div class="card max-w-96 bg-base-100 border-[1px]">
                     <figure class="px-12 pt-8 w-full"><img src="images/rhombus.png"/></figure>
                     <div class="card-body">
                       <h2 class="card-title text-center inline font-bold text-3xl">Rhombus</h2>
@@ -88,7 +89,7 @@
                     </div>
                 </div>
                 <!-- pentagon card -->
-                <div class="card w-96 bg-base-100 border-[1px]">
+                <div class="card max-w-96 bg-base-100 border-[1px]">
                     <figure class="px-12 pt-8 w-full"><img src="images/pentagon.png"/></figure>
                     <div class="card-body">
                       <h2 class="card-title text-center inline font-bold text-3xl">Pentagon</h2>
@@ -105,7 +106,7 @@
                     </div>
                 </div>
                 <!-- Ellipse card -->
-                <div class="card w-96 bg-base-100 border-[1px]">
+                <div class="card max-w-96 bg-base-100 border-[1px]">
                     <figure class="px-12 pt-8 w-full"><img src="images/ellipse.png"/></figure>
                     <div class="card-body">
                       <h2 class="card-title text-center inline font-bold text-3xl">Ellipse</h2>
@@ -128,6 +129,7 @@
             </div>
         </div>
     </main>
+    <script src="scripts/rectangle.js"></script>
     <script src="scripts/triangle-calculator.js"></script>
 </body>
 
